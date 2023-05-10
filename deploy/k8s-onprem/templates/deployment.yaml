@@ -69,7 +69,7 @@ spec:
             limits:
               nvidia.com/gpu: {{ .Values.image.numGpus }}
 
-          args: ["tritonserver", "--model-repository=/models", "--model-control-mode=explicit"]
+          args: ["tritonserver", "--model-repository=/models", "--model-control-mode=poll"]
 
           ports:
             - containerPort: 8000

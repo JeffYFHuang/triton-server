@@ -50,7 +50,7 @@ traefik:
 
 autoscaling:
   minReplicas: 2
-  maxReplicas: 3 
+  maxReplicas: 4 
   metrics:
     - type: Pods
       pods:
