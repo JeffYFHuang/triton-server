@@ -38,7 +38,7 @@ metadata:
     release: {{ .Release.Name }}
     heritage: {{ .Release.Service }}
 spec:
-  clusterIP: None
+#  clusterIP: None
   ports:
     - port: 8000
       targetPort: http
@@ -52,6 +52,7 @@ spec:
   selector:
     app: {{ template "triton-inference-server.name" . }}
     release: {{ .Release.Name }}
+  type: NodePort
 ---
 apiVersion: v1
 kind: Service
