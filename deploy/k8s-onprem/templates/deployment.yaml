@@ -67,7 +67,7 @@ spec:
 
           resources:
             limits:
-              nvidia.com/gpu.shared: {{ .Values.image.numGpus }}
+              nvidia.com/gpu: {{ .Values.image.numGpus }}
 
           args: ["tritonserver", "--model-repository=/models", "--model-control-mode=explicit"]
 
