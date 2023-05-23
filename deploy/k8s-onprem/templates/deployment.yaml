@@ -67,7 +67,7 @@ spec:
 
           resources:
             limits:
-              deepomatic.com/shared-gpu: {{ .Values.image.numGpus }}
+              nvidia.com/gpu.shared: {{ .Values.image.numGpus }}
 
           args: ["tritonserver", "--model-repository=/models", "--model-control-mode=explicit"]
 
