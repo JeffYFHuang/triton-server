@@ -57,6 +57,10 @@ spec:
             server: {{ .Values.image.modelRepositoryServer }}
             path: {{ .Values.image.modelRepositoryPath }}
             readOnly: false
+        - name: shm
+            emptyDir:
+              medium: Memory
+              sizeLimit: 512Mi
       containers:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.image.imageName }}"
@@ -64,6 +68,8 @@ spec:
           volumeMounts:
             - mountPath: /models
               name: models
+            - mountPath: /dev/shm
+              name: shm
 
           resources:
             limits:
