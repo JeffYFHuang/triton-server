@@ -75,7 +75,7 @@ spec:
             limits:
               nvidia.com/gpu: {{ .Values.image.numGpus }}
 
-          args: ["tritonserver", "--model-repository=/models", "--model-control-mode=explicit", "--backend-config=python,shm-default-byte-size=16777216"]
+          args: ["tritonserver", "--model-repository=/models", "--model-control-mode=explicit"]
 
           ports:
             - containerPort: 8000
