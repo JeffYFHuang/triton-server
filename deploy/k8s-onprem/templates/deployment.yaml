@@ -58,9 +58,9 @@ spec:
             path: {{ .Values.image.modelRepositoryPath }}
             readOnly: false
         - name: shm
-            emptyDir:
-              medium: Memory
-              sizeLimit: 512Mi
+          emptyDir:
+            medium: Memory
+            sizeLimit: 512Mi
       containers:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.image.imageName }}"
